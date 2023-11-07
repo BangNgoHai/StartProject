@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://crohv7x0bf8as"]
+
+[ext_resource type="Script" path="res://Levels/HBoxContainer.gd" id="1_ice4b"]
+[ext_resource type="TileSet" uid="uid://72dc5mf71si" path="res://Textures/tile_set.tres" id="1_qyaok"]
+
+[node name="Level" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -490.0
+offset_top = -576.0
+offset_right = -158.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+script = ExtResource("1_ice4b")
+
+[node name="Button1" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "LEVEL1
+"
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "LEVEL2"
+
+[node name="Button3" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "LEVEL3"
+
+[node name="Button4" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "LEVEL4"
+
+[node name="Button5" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "LEVEL5"
+
+[node name="Button6" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "LEVEL6"
+
+[node name="Title" type="Node2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="Title"]
+tile_set = ExtResource("1_qyaok")
+format = 2
+layer_0/tile_data = PackedInt32Array(131074, 524288, 5, 196610, 524288, 5, 262146, 524288, 5, 327682, 524288, 5, 393218, 524288, 5, 131078, 524288, 5, 196614, 524288, 5, 262150, 524288, 5, 393222, 524288, 5, 327686, 524288, 5, 131079, 524288, 5, 131080, 524288, 5, 262151, 524288, 5, 262152, 524288, 5, 393223, 524288, 5, 393224, 524288, 5, 393219, 524288, 5, 393220, 524288, 5, 131082, 524288, 5, 196619, 524288, 5, 262155, 524288, 5, 327691, 524288, 5, 393228, 524288, 5, 327693, 524288, 5, 262157, 524288, 5, 196621, 524288, 5, 131086, 524288, 5, 131083, 524288, 5, 131085, 524288, 5, 131088, 524288, 5, 196624, 524288, 5, 327696, 524288, 5, 262160, 524288, 5, 393232, 524288, 5, 393233, 524288, 5, 393234, 524288, 5, 262161, 524288, 5, 262162, 524288, 5, 131090, 524288, 5, 131089, 524288, 5, 131092, 524288, 5, 196628, 524288, 5, 262164, 524288, 5, 327700, 524288, 5, 393236, 524288, 5, 393237, 524288, 5, 393238, 524288, 5, 589829, 524288, 5, 589828, 524288, 5, 589827, 524288, 5, 655363, 524288, 5, 720899, 524288, 5, 720900, 524288, 5, 720901, 524288, 5, 786437, 524288, 5, 851973, 524288, 5, 851971, 524288, 5, 851972, 524288, 5, 589831, 524288, 5, 655367, 524288, 5, 720903, 524288, 5, 851975, 524288, 5, 786439, 524288, 5, 720904, 524288, 5, 720905, 524288, 5, 589832, 524288, 5, 589833, 524288, 5, 851976, 524288, 5, 851977, 524288, 5, 589835, 524288, 5, 655371, 524288, 5, 720907, 524288, 5, 786443, 524288, 5, 851979, 524288, 5, 851980, 524288, 5, 851981, 524288, 5, 589839, 524288, 5, 655375, 524288, 5, 720911, 524288, 5, 786447, 524288, 5, 851983, 524288, 5, 720912, 524288, 5, 720913, 524288, 5, 589840, 524288, 5, 589841, 524288, 5, 851984, 524288, 5, 851985, 524288, 5, 589843, 524288, 5, 589844, 524288, 5, 589845, 524288, 5, 655380, 524288, 5, 720916, 524288, 5, 786452, 524288, 5, 851988, 524288, 5)
+
+[node name="Maps" type="Node2D" parent="."]
+
+[connection signal="mouse_entered" from="HBoxContainer" to="HBoxContainer" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="HBoxContainer" to="HBoxContainer" method="_on_mouse_exited"]
+[connection signal="focus_entered" from="HBoxContainer/Button1" to="HBoxContainer" method="_on_button_1_focus_entered"]

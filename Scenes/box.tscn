@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://x6635c8xltxc"]
+
+[ext_resource type="Script" path="res://Scripts/box.gd" id="1_e4usx"]
+[ext_resource type="Texture2D" uid="uid://cqhtd58ssygu4" path="res://Textures/tilemap.png" id="2_aoqrg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6cgn8"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0khw"]
+atlas = ExtResource("2_aoqrg")
+region = Rect2(128, 97, 16, 16)
+
+[node name="Box" type="CharacterBody2D" groups=["box"]]
+script = ExtResource("1_e4usx")
+
+[node name="CollisionBox" type="CollisionShape2D" parent="." groups=["box"]]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_6cgn8")
+
+[node name="Texture" type="Sprite2D" parent="." groups=["box"]]
+texture = SubResource("AtlasTexture_h0khw")
+centered = false
+
+[node name="RayCast2D" type="RayCast2D" parent="." groups=["box"]]
+position = Vector2(8, 8)
+target_position = Vector2(0, 16)

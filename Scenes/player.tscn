@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://30klsfet8tdq"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_ivhfr"]
+[ext_resource type="Texture2D" uid="uid://cqhtd58ssygu4" path="res://Textures/tilemap.png" id="2_vo8fs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ah32a"]
+atlas = ExtResource("2_vo8fs")
+region = Rect2(400, 0, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7ru1"]
+size = Vector2(16, 16)
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_ivhfr")
+
+[node name="Texture" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_ah32a")
+centered = false
+
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_i7ru1")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(8, 8)
+target_position = Vector2(0, 16)
